@@ -7,7 +7,7 @@ namespace WPD_Team\Admin;
  */
 class Menu {
     public function __construct() {
-        add_action( 'init', array( $this, 'wpd_register_post_type' ) );
+        
     }
 
     public function wpd_register_post_type() {

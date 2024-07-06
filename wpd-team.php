@@ -38,6 +38,9 @@ final class Wpd_Team {
 
         // after activation run plugin_loaded hook
         add_action( 'plugin_loaded', [$this, 'init_plugin'] );
+
+        // register post type
+        add_action( 'init', [$this, 'wpd_register_post_type'] );
     }
 
     /**
@@ -80,10 +83,20 @@ final class Wpd_Team {
 
         // If admin page it'll be loader otherwise not loaded
         if ( is_admin() ) {
-            new WPD_Team\Admin();
+
         } else {
             new WPD_Team\Frontend();
         }
+    }
+
+    /**
+     * Register custom team post type
+     *
+     * @return mixed
+     */
+    public function wpd_register_post_type() {
+        $menu = new WPD_Team\Admin\Menu();
+        $menu->wpd_register_post_type();
     }
 
     /**
