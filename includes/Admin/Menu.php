@@ -30,7 +30,6 @@ class Menu {
             ],
             'public'          => true,
             'has_archive'     => true,
-            'show_in_rest'    => true,
             'hierarchical'    => true,
             'rewrite'         => array( 'slug' => 'team' ),
             'capability_type' => 'post',
@@ -39,6 +38,6 @@ class Menu {
             'menu_icon'       => 'dashicons-admin-users',
         );
 
-        register_post_type( 'wpd-team', $args );
+        register_post_type( 'wpd_team', $args );
     }
 }
