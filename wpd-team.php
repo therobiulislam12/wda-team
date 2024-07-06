@@ -13,12 +13,24 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit();
 }
 
+require_once __DIR__ . '/vendor/autoload.php';
+
 /**
  * Create a final class for our main plugin
  */
 final class Wpd_Team{
+    //Plugin Version
+    const version = "1.0.0"; 
+
     // declare instance
     public static $instance;
+
+    /**
+     * Plugin Constructor 
+     */
+    private function __construct(){
+        
+    }
 
     /**
      * Create a getInstance method for our class
