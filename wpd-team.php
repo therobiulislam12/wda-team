@@ -97,6 +97,7 @@ final class Wpd_Team {
     public function wpd_register_post_type() {
         $menu = new WPD_Team\Admin\Menu();
         $menu->wpd_register_post_type();
+        $menu->wpd_register_taxonomy();
     }
 
     /**
